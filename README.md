@@ -1,2 +1,5 @@
-# SparkleHearts
-a game of winning or losing. Which one will you be?
+To play(watch out you might get your heart broken....)use
+`elm reactor`
+
+
+
