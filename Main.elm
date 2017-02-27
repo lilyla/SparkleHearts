@@ -14,9 +14,9 @@ main =
 view model =
   div []
     [ h1 [] [ text model ]
-    , button [ onClick Decrement, style [("padding", "5em")] ] [ text "- 1 💖" ]
-    , button [ onClick Increment, style [("padding", "5em") ]] [ text "+ 1 💖" ]
-    , button [ onClick Brokenheart, style [("padding", "5em") ]] [ text "Lose it all" ]
+    , button [ onClick Decrement, style [("padding", "2em")] ] [ text "- 1 💖" ]
+    , button [ onClick Increment, style [("padding", "2em") ]] [ text "+ 1 💖" ]
+    , button [ onClick Brokenheart, style [("padding", "2em") ]] [ text "💔" ]
   
     ]
 
@@ -27,11 +27,13 @@ update : Msg -> String -> String
 update msg lovetap =
   case msg of
     Increment ->
-      lovetap ++ "💖"
+      if lovetap == "💔" then
+        "💖"
+        else lovetap ++ "💖"
 
     Decrement ->
        String.dropLeft 2 lovetap 
        
     Brokenheart -> 
-       ""
+       "💔"
        
